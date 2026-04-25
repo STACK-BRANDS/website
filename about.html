@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - STACK BRANDS</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/logo.png">
+  <meta name="description" content="STACK BRANDS is a multi-brand e-commerce holding company specializing in direct-to-consumer fashion.">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #fafafa;
+      --bg-card: #ffffff;
+      --text: #111111;
+      --text-secondary: #555555;
+      --text-tertiary: #999999;
+      --accent: #111111;
+      --border: rgba(0,0,0,0.08);
+      --border-hover: rgba(0,0,0,0.15);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 64px;
+      background: rgba(250,250,250,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .header-logo {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+    }
+
+    .header-brand {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      color: var(--text);
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .header-link {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+      letter-spacing: 0.02em;
+    }
+
+    .header-link:hover {
+      color: var(--text);
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #ffffff;
+      background: var(--accent);
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+
+    .header-cta:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+
+    .header-cta svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* Main content */
+    main {
+      flex: 1;
+      padding: 120px 24px 80px;
+      max-width: 720px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .page-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    .page-title {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.1s forwards;
+    }
+
+    .section {
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.2s forwards;
+    }
+
+    .section:nth-child(4) { animation-delay: 0.3s; }
+    .section:nth-child(5) { animation-delay: 0.4s; }
+    .section:nth-child(6) { animation-delay: 0.5s; }
+    .section:nth-child(7) { animation-delay: 0.6s; }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+
+    /* Info grid */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .info-cell {
+      background: var(--bg-card);
+      padding: 24px;
+      text-align: center;
+    }
+
+    .info-cell .label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 8px;
+    }
+
+    .info-cell .value {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .info-cell .sub {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-top: 4px;
+    }
+
+    /* Contact card */
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 8px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 12px 0;
+    }
+
+    .contact-row:not(:last-child) {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-tertiary);
+      min-width: 80px;
+      flex-shrink: 0;
+    }
+
+    .contact-value {
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .contact-value a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.2s;
+    }
+
+    .contact-value a:hover {
+      border-color: var(--text);
+    }
+
+    /* Footer */
+    footer {
+      padding: 24px 40px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-left {
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-link {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-link:hover {
+      color: var(--text-secondary);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      header { padding: 0 20px; }
+      .header-link { display: none; }
+      main { padding: 100px 20px 60px; }
+      .info-grid { grid-template-columns: 1fr; }
+      footer {
+        padding: 20px;
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="/" class="header-left">
+      <img src="/logo.png" alt="STACK BRANDS" class="header-logo">
+      <span class="header-brand">STACK BRANDS</span>
+    </a>
+    <div class="header-right">
+      <a href="/" class="header-link">Home</a>
+      <a href="/about" class="header-link" style="color: var(--text); font-weight: 500;">About</a>
+      <a href="https://app.stack-brands.com" class="header-cta">
+        Command Center
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <div class="page-label">About</div>
+    <h1 class="page-title">Multi-brand e-commerce,<br>built to scale.</h1>
+
+    <div class="section">
+      <div class="section-title">Company</div>
+      <p>
+        STACK BRANDS is a multi-brand e-commerce holding company specializing in direct-to-consumer fashion. We acquire, build, and scale online retail brands across global markets, with a focus on operational efficiency and sustainable growth.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">What We Do</div>
+      <p>
+        We operate a portfolio of independent fashion brands, each serving distinct customer segments across North America, Europe, and the United Kingdom. Our centralized infrastructure handles supply chain management, performance marketing, customer support, and fulfillment, allowing each brand to scale independently while sharing operational resources.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Operations</div>
+      <p>
+        Our operations are driven by proprietary automation systems and data-driven decision making. From order processing and supplier management to advertising optimization and financial reporting, we use technology to reduce manual overhead and improve accuracy at every stage of the value chain.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Presence</div>
+      <div class="info-grid">
+        <div class="info-cell">
+          <div class="label">Netherlands</div>
+          <div class="value">NL</div>
+          <div class="sub">Operations</div>
+        </div>
+        <div class="info-cell">
+          <div class="label">United States</div>
+          <div class="value">US</div>
+          <div class="sub">Wyoming</div>
+        </div>
+        <div class="info-cell">
+          <div class="label">Hong Kong</div>
+          <div class="value">HK</div>
+          <div class="sub">Entity</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Markets Served</div>
+      <p>
+        Our brands serve customers primarily in the United States, United Kingdom, and the European Union. All brands operate through their own independent online storefronts with localized customer support and fulfillment.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Contact</div>
+      <div class="contact-card">
+        <div class="contact-row">
+          <span class="contact-label">Email</span>
+          <span class="contact-value"><a href="mailto:info@stack-brands.com">info@stack-brands.com</a></span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Website</span>
+          <span class="contact-value"><a href="https://stack-brands.com">stack-brands.com</a></span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+      &copy; 2026 STACK BRANDS. All rights reserved.
+    </div>
+    <div class="footer-right">
+      <a href="/" class="footer-link">Home</a>
+      <a href="/about" class="footer-link">About</a>
+      <a href="https://app.stack-brands.com" class="footer-link">Command Center</a>
+    </div>
+  </footer>
+
+</body>
+</html>
