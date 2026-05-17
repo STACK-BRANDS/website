@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - STACK BRANDS</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/logo.png">
+  <meta name="description" content="STACK BRANDS Privacy Policy. How we collect, use, and protect your data.">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #fafafa;
+      --bg-card: #ffffff;
+      --text: #111111;
+      --text-secondary: #555555;
+      --text-tertiary: #999999;
+      --accent: #111111;
+      --border: rgba(0,0,0,0.08);
+      --border-hover: rgba(0,0,0,0.15);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 64px;
+      background: rgba(250,250,250,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .header-logo {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+    }
+
+    .header-brand {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      color: var(--text);
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .header-link {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+      letter-spacing: 0.02em;
+    }
+
+    .header-link:hover {
+      color: var(--text);
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #ffffff;
+      background: var(--accent);
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+
+    .header-cta:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+
+    .header-cta svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* Main content */
+    main {
+      flex: 1;
+      padding: 120px 24px 80px;
+      max-width: 720px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .page-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    .page-title {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 8px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.1s forwards;
+    }
+
+    .page-meta {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.15s forwards;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.2s forwards;
+    }
+
+    .section:nth-child(4)  { animation-delay: 0.25s; }
+    .section:nth-child(5)  { animation-delay: 0.3s; }
+    .section:nth-child(6)  { animation-delay: 0.35s; }
+    .section:nth-child(7)  { animation-delay: 0.4s; }
+    .section:nth-child(8)  { animation-delay: 0.45s; }
+    .section:nth-child(9)  { animation-delay: 0.5s; }
+    .section:nth-child(10) { animation-delay: 0.55s; }
+    .section:nth-child(11) { animation-delay: 0.6s; }
+    .section:nth-child(12) { animation-delay: 0.65s; }
+    .section:nth-child(13) { animation-delay: 0.7s; }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section ul {
+      margin: 12px 0 12px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .section ul li {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    .section ul li strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .section a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.2s;
+    }
+
+    .section a:hover {
+      border-color: var(--text);
+    }
+
+    .highlight-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 8px;
+    }
+
+    .highlight-box p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 0;
+    }
+
+    /* Footer */
+    footer {
+      padding: 24px 40px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-left {
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-link {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-link:hover {
+      color: var(--text-secondary);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      header { padding: 0 20px; }
+      .header-link { display: none; }
+      main { padding: 100px 20px 60px; }
+      footer {
+        padding: 20px;
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="/" class="header-left">
+      <img src="/logo.png" alt="STACK BRANDS" class="header-logo">
+      <span class="header-brand">STACK BRANDS</span>
+    </a>
+    <div class="header-right">
+      <a href="/" class="header-link">Home</a>
+      <a href="/about" class="header-link">About</a>
+      <a href="https://app.stack-brands.com" class="header-cta">
+        Command Center
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <div class="page-label">Legal</div>
+    <h1 class="page-title">Privacy Policy</h1>
+    <p class="page-meta">Last updated: May 2026</p>
+
+    <div class="section">
+      <div class="section-title">1. Who We Are</div>
+      <p>
+        STACK BRANDS is a privately held multi-brand e-commerce company. This privacy policy applies to our corporate website at stack-brands.com and our internal operational platform at app.stack-brands.com, as well as any integrations and tools operated under the STACK BRANDS name.
+      </p>
+      <p>
+        For privacy inquiries, contact us at <a href="mailto:info@stack-brands.com">info@stack-brands.com</a>.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">2. What We Collect</div>
+      <p>We may collect the following categories of personal information:</p>
+      <ul>
+        <li><strong>Identity data:</strong> name, email address, and job title for team members and authorized users.</li>
+        <li><strong>Usage data:</strong> IP address, browser type, pages visited, time and date of access, and navigation paths.</li>
+        <li><strong>Authentication data:</strong> login credentials managed via Google OAuth, scoped to authorized company accounts.</li>
+        <li><strong>Technical data:</strong> device information, operating system, and network connection details collected automatically via server logs.</li>
+      </ul>
+      <p>We do not collect payment card data, financial account details, or sensitive personal data through this domain.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">3. How We Use Your Data</div>
+      <p>We use collected data exclusively for the following purposes:</p>
+      <ul>
+        <li>To operate, maintain, and secure our internal platform and tools.</li>
+        <li>To authenticate and authorize access for team members.</li>
+        <li>To monitor platform performance and diagnose technical issues.</li>
+        <li>To comply with applicable legal obligations.</li>
+      </ul>
+      <p>We do not sell, rent, or share personal data with third parties for marketing purposes.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">4. Legal Basis for Processing (GDPR)</div>
+      <p>Where the General Data Protection Regulation (GDPR) applies, we process personal data on the following legal bases:</p>
+      <ul>
+        <li><strong>Legitimate interests</strong> (Art. 6(1)(f) GDPR): to operate and secure our internal tools and infrastructure.</li>
+        <li><strong>Contractual necessity</strong> (Art. 6(1)(b) GDPR): to provide access and services to authorized team members.</li>
+        <li><strong>Legal obligation</strong> (Art. 6(1)(c) GDPR): where required by applicable law.</li>
+      </ul>
+      <p>We process personal data in accordance with applicable privacy laws in our jurisdiction.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">5. Data Retention</div>
+      <p>
+        We retain personal data only as long as necessary for the purposes described in this policy, or as required by law. Server log data is retained for a maximum of 90 days. Authentication session data is retained for the duration of the active session.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">6. Third-Party Services</div>
+      <p>This platform integrates with the following third-party services, which may process data on our behalf:</p>
+      <ul>
+        <li><strong>Google (OAuth):</strong> for authentication. Governed by Google's Privacy Policy.</li>
+        <li><strong>Supabase:</strong> for database and authentication infrastructure. Data is processed within the EU.</li>
+        <li><strong>Vercel:</strong> for platform deployment and delivery.</li>
+      </ul>
+      <p>All third-party processors are bound by data processing agreements where required under GDPR.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">7. Your Rights</div>
+      <p>Under applicable data protection law, you have the right to:</p>
+      <ul>
+        <li>Access the personal data we hold about you.</li>
+        <li>Request correction of inaccurate data.</li>
+        <li>Request deletion of your data, subject to legal retention obligations.</li>
+        <li>Object to or restrict processing in certain circumstances.</li>
+        <li>Lodge a complaint with your local data protection authority.</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at <a href="mailto:info@stack-brands.com">info@stack-brands.com</a>.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">8. Security</div>
+      <p>
+        We implement appropriate technical and organizational measures to protect personal data against unauthorized access, loss, or disclosure. Access to our internal platform is restricted to authorized personnel via authenticated sessions. All data in transit is encrypted using TLS.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">9. Pinterest API Integration</div>
+      <p>
+        STACK BRANDS integrates with the Pinterest API to enable authorized team members to manage Pinterest business accounts on behalf of our brands. In connection with this integration, we may receive and process the following data from Pinterest:
+      </p>
+      <ul>
+        <li><strong>Business account data:</strong> account ID, profile name, and account settings.</li>
+        <li><strong>Content data:</strong> Pins, boards, images, descriptions, and destination URLs.</li>
+        <li><strong>Analytics and performance metrics:</strong> impressions, clicks, saves, and engagement rates.</li>
+      </ul>
+      <p>
+        We use Pinterest data exclusively for the following internal purposes: to create, schedule, and publish Pins and boards on behalf of STACK BRANDS brand accounts; to analyze campaign and content performance; and to generate internal reports and dashboards.
+      </p>
+      <p>
+        We do not sell, rent, or share Pinterest-derived data with third parties. Pinterest data is not used for advertising targeting or shared with marketing partners.
+      </p>
+      <p>
+        Pinterest data is retained only as long as necessary for the operational purposes described above, and is protected with the same technical and organizational security measures described in Section 8 of this policy.
+      </p>
+      <p>
+        Authorized users may revoke Pinterest access at any time via Pinterest account settings (Settings &gt; Security &gt; Apps with access to your account) or by contacting us at <a href="mailto:info@stack-brands.com">info@stack-brands.com</a>. Upon revocation, we will cease accessing Pinterest data and delete any stored Pinterest credentials.
+      </p>
+      <p>
+        For questions specifically about how we handle Pinterest data, contact us at <a href="mailto:info@stack-brands.com">info@stack-brands.com</a>.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">10. Changes to This Policy</div>
+      <p>
+        We may update this Privacy Policy from time to time. The "Last updated" date at the top of this page reflects the most recent revision. Continued use of our platform following any changes constitutes acceptance of the revised policy.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Contact</div>
+      <div class="highlight-box">
+        <p>
+          For any questions about this Privacy Policy or how we handle your data, contact us at <a href="mailto:info@stack-brands.com">info@stack-brands.com</a>.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+      &copy; 2026 STACK BRANDS. All rights reserved.
+    </div>
+    <div class="footer-right">
+      <a href="/" class="footer-link">Home</a>
+      <a href="/about" class="footer-link">About</a>
+      <a href="/privacy" class="footer-link" style="color: var(--text-secondary); font-weight: 500;">Privacy</a>
+      <a href="https://app.stack-brands.com" class="footer-link">Command Center</a>
+    </div>
+  </footer>
+
+</body>
+</html>
