@@ -4,7 +4,17 @@
   "redirects": [
     {
       "source": "/privacy-policy",
-      "destination": "/privacy",
+      "destination": "/legal/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/legal/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/legal/terms-of-service",
       "permanent": true
     }
   ],
@@ -14,12 +24,24 @@
       "destination": "/about.html"
     },
     {
-      "source": "/privacy",
-      "destination": "/privacy.html"
+      "source": "/legal",
+      "destination": "/legal/index.html"
     },
     {
-      "source": "/terms-of-service",
-      "destination": "/terms-of-service.html"
+      "source": "/legal/privacy-policy",
+      "destination": "/legal/privacy-policy.html"
+    },
+    {
+      "source": "/legal/terms-of-service",
+      "destination": "/legal/terms-of-service.html"
+    },
+    {
+      "source": "/legal/cookie-policy",
+      "destination": "/legal/cookie-policy.html"
+    },
+    {
+      "source": "/legal/data-processing",
+      "destination": "/legal/data-processing.html"
     }
   ]
 }
